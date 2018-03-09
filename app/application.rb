@@ -10,7 +10,7 @@ class Application
       resp.write "Route not found"
       resp.status = 404
     end
-  if @@item.include?(item)
+  if @@items.include?(item)
        item.price
   else
     resp.write "Item not found"
