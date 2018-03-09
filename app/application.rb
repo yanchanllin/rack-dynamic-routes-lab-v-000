@@ -6,7 +6,9 @@ class Application
     req = Rack::Request.new(env)
   binding.pry
     if req.path.include?"/items"
-
+      i=req.path.split('/').last
+      item = @@items.find {|item| item.name == i} 
+        resp.write item.price
     else
       resp.write "Route not found"
       resp.status = 404
