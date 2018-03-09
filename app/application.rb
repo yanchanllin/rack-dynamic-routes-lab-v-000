@@ -11,7 +11,7 @@ class Application
       resp.write "Route not found"
       resp.status = 404
     end
-    binding.pry
+    # binding.pry
   if @@items.include?(req.path)
        item.price
   else
