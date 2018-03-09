@@ -1,4 +1,5 @@
 class Application
+  attr_accessor 
  @@items =[]
   def call(env)
     resp = Rack::Response.new
@@ -10,7 +11,8 @@ class Application
       resp.write "Route not found"
       resp.status = 404
     end
-  if @@items.include?(item)
+    binding.pry
+  if @@items.include?(req.params)
        item.price
   else
     resp.write "Item not found"
