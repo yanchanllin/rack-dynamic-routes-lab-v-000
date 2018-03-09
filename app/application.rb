@@ -8,13 +8,11 @@ class Application
     if req.path.include?"/items"
       i=req.path.split('/').last
       item = @@items.find {|item| item.name == i}
-      binding.pry
-      resp.write item.price
-      if @@items.include?(req.path)
-        item.price
-      else
+      if   item == nil
         resp.write "Item not found"
         resp.status = 400
+      else 
+        resp.write item.price
       end
     else
       resp.write "Route not found"
