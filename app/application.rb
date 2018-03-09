@@ -1,6 +1,6 @@
 require'pry'
 class Application
-  attr_accessor
+
  @@items =[]
   def call(env)
     resp = Rack::Response.new
