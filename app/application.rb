@@ -9,7 +9,7 @@ class Application
 
     else
       resp.write "Route not found"
-      resp.status = 404
+      resp.status = 400
     end
     # binding.pry
   if @@items.include?(req.path)
